@@ -1,7 +1,13 @@
-import React from 'react'
+import s from './style.module.css'
 
-const Logo = () => {
-	return <div>Hello I'm Logo</div>
-}
+const Logo = ({ image, title, subtitle }) => (
+	<div>
+		<div className={s.container}>
+			<img className={s.img} src={image} alt='logo' />
+			<span className={s.title}>{title}</span>
+		</div>
+		<span className={s.subtitle}>{subtitle}</span>
+	</div>
+)
 
 export default Logo
