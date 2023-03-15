@@ -47,7 +47,7 @@ function App() {
 				</div>
 			</div>
 			<div className={s.tv_show_details}>
-				{currentTVShow && <TVShowDetail tvshow={currentTVShow} />}
+				{currentTVShow && <TVShowDetail tvShow={currentTVShow} />}
 			</div>
 			<div className={s.recommended_shows}>Recommended TV Shows</div>
 		</div>
