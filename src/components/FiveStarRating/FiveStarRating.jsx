@@ -21,7 +21,7 @@ const FiveStartRating = ({ rating }) => {
 	}
 
 	// Push the empty star icon
-	for (let i = 1; i <= emptyStarCount.length; i++) {
+	for (let i = 1; i <= emptyStarCount; i++) {
 		starList.push(<StarEmpty key={'star-empty' + i} />)
 	}
 
