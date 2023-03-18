@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import Logo from './components/Logo/Logo'
 import SearchBar from './components/SearchBar/SearchBar'
 import TVShowDetail from './components/TVShowDetail/TVShowDetail'

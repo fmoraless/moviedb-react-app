@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import TVShowListItem from '../TVShowListItem/TVShowListItem'
 import s from './style.module.css'
 
