@@ -3,7 +3,7 @@ import s from './style.module.css'
 
 const TVShowList = ({ onClickItem, tvShowList }) => (
 	<div>
-		<div className={s.title}>probably must like:</div>
+		<div className={s.title}>You'll probably must like:</div>
 		<div className={s.list}>
 			{tvShowList.map(tvShow => {
 				return (

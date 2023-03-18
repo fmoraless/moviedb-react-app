@@ -1,9 +1,14 @@
 import { SMALL_IMG_COVER_BASE_URL } from '../../config.js'
-import s from './style.module.css'
+import {
+	ListItemContainer,
+	ListItemImg,
+	ListItemTitle,
+} from './StyledTVShowListItem'
+//import s from './style.module.css'
 
 const MAX_TITLE_LENGTH = 20
 
-const TVShowListItem = ({ tvShow, onClick }) => {
+/* const TVShowListItem = ({ tvShow, onClick }) => {
 	const onClick_ = () => {
 		onClick(tvShow)
 	}
@@ -22,6 +27,24 @@ const TVShowListItem = ({ tvShow, onClick }) => {
 			</div>
 		</div>
 	)
-}
+} */
 
+const TVShowListItem = ({ tvShow, onClick }) => {
+	const onClick_ = () => {
+		onClick(tvShow)
+	}
+	return (
+		<ListItemContainer onClick={onClick_}>
+			<ListItemImg
+				src={SMALL_IMG_COVER_BASE_URL + tvShow.backdrop_path}
+				alt={tvShow.name}
+			/>
+			<ListItemTitle>
+				{tvShow.name.length > MAX_TITLE_LENGTH
+					? tvShow.name.slice(0, MAX_TITLE_LENGTH) + '...'
+					: tvShow.name}
+			</ListItemTitle>
+		</ListItemContainer>
+	)
+}
 export default TVShowListItem
