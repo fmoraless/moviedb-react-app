@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import Logo from './components/Logo/Logo'
 import SearchBar from './components/SearchBar/SearchBar'
 import TVShowDetail from './components/TVShowDetail/TVShowDetail'
@@ -12,12 +12,30 @@ function App() {
 	const [currentTVShow, setCurrentTVShow] = useState()
 	const [recommendationList, setRecommendationList] = useState([])
 
-	async function fetchPopulars() {
+	/* async function fetchPopulars() {
 		const popularTVShowList = await TVShowAPI.fetchPopulars()
 		if (popularTVShowList && popularTVShowList.length > 0) {
 			setCurrentTVShow(popularTVShowList[0])
 		}
-	}
+	} */
+
+	/* Version with UseCallback function */
+	/* const fetchPopulars = useCallback(async () => {
+		const popularTVShowList = await TVShowAPI.fetchPopulars()
+		if (popularTVShowList.length > 0) {
+			setCurrentTVShow(popularTVShowList[0])
+		}
+	}, [currentTVShow]) */
+
+	/* Version with UseMemo */
+	const fetchPopulars = useMemo(() => {
+		return async () => {
+			const popularTVShowList = await TVShowAPI.fetchPopulars()
+			if (popularTVShowList.length > 0) {
+				setCurrentTVShow(popularTVShowList[0])
+			}
+		}
+	}, [currentTVShow])
 
 	async function fetchByTitle(title) {
 		const searchResponse = await TVShowAPI.fetchByTitle(title)
