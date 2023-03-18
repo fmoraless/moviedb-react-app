@@ -4,13 +4,13 @@ const FiveStartRating = ({ rating }) => {
 	const starList = []
 
 	const starFillCount = Math.floor(rating)
-	console.log({ llenas: starFillCount })
+	//console.log({ llenas: starFillCount })
 
 	const hasHalfStar = rating - parseInt(rating) >= 0.5
-	console.log({ media: hasHalfStar })
+	//console.log({ media: hasHalfStar })
 
 	const emptyStarCount = 5 - starFillCount - (hasHalfStar ? 1 : 0)
-	console.log({ vacias: emptyStarCount })
+	//console.log({ vacias: emptyStarCount })
 
 	for (let i = 1; i <= starFillCount; i++) {
 		starList.push(<StarFill key={'star-fill' + i} />)

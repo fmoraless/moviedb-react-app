@@ -17,7 +17,7 @@ export class TVShowAPI {
     static  async fetchByTitle(title) {
         try {
             const response = await axios.get(`${BASE_URL}/search/tv${API_KEY_PARAM}&query=${title}`)
-            console.log(response.data.results)
+            //console.log(response.data.results)
             return response.data.results
         } catch (error) {
             console.log(error)
@@ -29,7 +29,7 @@ export class TVShowAPI {
             const response = await axios.get(
                 `${BASE_URL}/tv/${tvShowId}/recommendations${API_KEY_PARAM}`
             )
-            console.log(response.data.results)
+            //console.log(response.data.results)
             return response.data.results
         } catch (error) {
             console.log(error)
